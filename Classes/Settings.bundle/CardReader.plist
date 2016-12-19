@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   CardReader.plist
+   HermesApp
+
+   Created by Lutz  Thalmann on 13.08.10.
+   Copyright 2010 __MyCompanyName__. All rights reserved.
+-->
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Kartenleser</string>
+			<key>Key</key>
+			<string>HermesApp_SYSVAL_ENABLE_MSR</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Modus</string>
+			<key>Key</key>
+			<string>HermesApp_SYSVAL_MSR_RAW</string>
+			<key>Values</key>
+			<array><string>FALSE</string><string>TRUE</string></array>
+			<key>Titles</key>
+			<array><string>normal</string><string>raw</string></array>
+			<key>DefaultValue</key>
+			<string>FALSE</string>
+		</dict>
+	</array>
+</dict>
+</plist>

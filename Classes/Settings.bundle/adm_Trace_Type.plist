@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>trace_type</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<real>1</real>
+			<key>trace_type</key>
+			<string>LOAD</string>
+			<key>description</key>
+			<string>Ware laden</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>2</real>
+			<key>trace_type</key>
+			<string>UNLOAD</string>
+			<key>description</key>
+			<string>Ware abladen</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>3</real>
+			<key>trace_type</key>
+			<string>INVENTORY</string>
+			<key>description</key>
+			<string>Ware zählen</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>9</real>
+			<key>trace_type</key>
+			<string>UNTOUCHED</string>
+			<key>description</key>
+			<string>Ware nicht transportiert</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>81</real>
+			<key>trace_type</key>
+			<string>DELIVERYSIGNATURE</string>
+			<key>description</key>
+			<string>Unterschrift als Lieferbestätigung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>82</real>
+			<key>trace_type</key>
+			<string>DELIVERYPHOTO</string>
+			<key>description</key>
+			<string>Foto als Lieferbestätigung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>83</real>
+			<key>trace_type</key>
+			<string>PICKUPSIGNATURE</string>
+			<key>description</key>
+			<string>Unterschrift als Abholbestätigung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>84</real>
+			<key>trace_type</key>
+			<string>PICKUPPHOTO</string>
+			<key>description</key>
+			<string>Foto als Abholbestätigung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>85</real>
+			<key>trace_type</key>
+			<string>PAYMENTONDELIVERY</string>
+			<key>description</key>
+			<string>Zahlung bei Lieferung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>86</real>
+			<key>trace_type</key>
+			<string>PAYMENTONPICKUP</string>
+			<key>description</key>
+			<string>Zahlung bei Abholung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>88</real>
+			<key>trace_type</key>
+			<string>LOCATIONPHOTO</string>
+			<key>description</key>
+			<string>Foto von Haltestelle</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>89</real>
+			<key>trace_type</key>
+			<string>ITEMPHOTO</string>
+			<key>description</key>
+			<string>Foto von Ware</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>90</real>
+			<key>trace_type</key>
+			<string>ENDOFTOUR</string>
+			<key>description</key>
+			<string>Tour beendet</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>91</real>
+			<key>trace_type</key>
+			<string>OUTOFORDERS</string>
+			<key>description</key>
+			<string>keine Fahraufträge</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>92</real>
+			<key>trace_type</key>
+			<string>OUTOFTIME</string>
+			<key>description</key>
+			<string>nicht genügend Zeit</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>93</real>
+			<key>trace_type</key>
+			<string>OUTOFSOMETHING</string>
+			<key>description</key>
+			<string>anderer Grund</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>94</real>
+			<key>trace_type</key>
+			<string>BECAUSEOFREJECTION</string>
+			<key>description</key>
+			<string>Annahmeverweigerung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>95</real>
+			<key>trace_type</key>
+			<string>BECAUSEOFDAMAGE</string>
+			<key>description</key>
+			<string>Beschädigung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>96</real>
+			<key>trace_type</key>
+			<string>BECAUSEOFLOADINGEQUIPMENT</string>
+			<key>description</key>
+			<string>Ladehilfsmittel nicht verfügbar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>97</real>
+			<key>trace_type</key>
+			<string>BECAUSEOFCLOSED</string>
+			<key>description</key>
+			<string>Warenannahme geschlossen</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>98</real>
+			<key>trace_type</key>
+			<string>BECAUSEOFREFUSALOFACCESS</string>
+			<key>description</key>
+			<string>Zutritt/Zufahrt verweigert</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>99</real>
+			<key>trace_type</key>
+			<string>BECAUSEOFIDLETIME</string>
+			<key>description</key>
+			<string>Wartezeit überschritten</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>111</real>
+			<key>trace_type</key>
+			<string>DAMAGERESERVE</string>
+			<key>description</key>
+			<string>wegen Beschädigung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>112</real>
+			<key>trace_type</key>
+			<string>SHORTDELIVERYRESERVE</string>
+			<key>description</key>
+			<string>wegen unvollständiger Sendung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>119</real>
+			<key>trace_type</key>
+			<string>TEMPERATURERESERVE</string>
+			<key>description</key>
+			<string>wegen falscher Temperatur</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>131</real>
+			<key>trace_type</key>
+			<string>DAMAGEDGOODS</string>
+			<key>description</key>
+			<string>Ware beschädigt</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>132</real>
+			<key>trace_type</key>
+			<string>SHORTSHIPPING</string>
+			<key>description</key>
+			<string>Sendung unvollständig</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>133</real>
+			<key>trace_type</key>
+			<string>SHIPPINGNOTREADY</string>
+			<key>description</key>
+			<string>Ware nicht bereit</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>137</real>
+			<key>trace_type</key>
+			<string>ALREADYSHIPPED</string>
+			<key>description</key>
+			<string>Ware bereits abgeholt</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>138</real>
+			<key>trace_type</key>
+			<string>CLOSEDSHIPPING</string>
+			<key>description</key>
+			<string>Niemand anwesend</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>141</real>
+			<key>trace_type</key>
+			<string>DAMAGEREJECTION</string>
+			<key>description</key>
+			<string>wegen Beschädigung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>142</real>
+			<key>trace_type</key>
+			<string>BELONGINGSREJECTION</string>
+			<key>description</key>
+			<string>wegen unklarer Zugehörigkeit</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>143</real>
+			<key>trace_type</key>
+			<string>WRONGGOODSREJECTION</string>
+			<key>description</key>
+			<string>wegen falscher Ware</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>144</real>
+			<key>trace_type</key>
+			<string>NOORDERREJECTION</string>
+			<key>description</key>
+			<string>wegen Ware ohne Bestellung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>149</real>
+			<key>trace_type</key>
+			<string>TEMPERATUREREJECTION</string>
+			<key>description</key>
+			<string>wegen falscher Temperatur</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>161</real>
+			<key>trace_type</key>
+			<string>NOLOADINGEQUIPMENT</string>
+			<key>description</key>
+			<string>kein geeignetes Ladehilfsmittel</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>162</real>
+			<key>trace_type</key>
+			<string>NOLOADINGEQUIPMENTUSER</string>
+			<key>description</key>
+			<string>kein Ladehilfsmittel-Bediener</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>171</real>
+			<key>trace_type</key>
+			<string>CLOSEDFORBREAK</string>
+			<key>description</key>
+			<string>wegen Pause</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>172</real>
+			<key>trace_type</key>
+			<string>CLOSEDFORHOLIDAY</string>
+			<key>description</key>
+			<string>wegen Feiertag</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>173</real>
+			<key>trace_type</key>
+			<string>CLOSEDFORSTOCKTAKING</string>
+			<key>description</key>
+			<string>wegen Inventur</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>174</real>
+			<key>trace_type</key>
+			<string>CLOSEDFORWORKSMEETING</string>
+			<key>description</key>
+			<string>wegen Betriebsversammlung</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>1001</real>
+			<key>trace_type</key>
+			<string>TRUNCATEDTOURSTOP</string>
+			<key>description</key>
+			<string>abgebrochener Tourstop</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>1002</real>
+			<key>trace_type</key>
+			<string>TRUNCATEDTOUR</string>
+			<key>description</key>
+			<string>abgebrochene Tour</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<real>1010</real>
+			<key>trace_type</key>
+			<string>REUSETRANSPORTBOX</string>
+			<key>description</key>
+			<string>Transportbox wiederverwendet</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>6001</integer>
+			<key>trace_type</key>
+			<string>REORDER</string>
+			<key>description</key>
+			<string>Tour stops reordering</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>6002</integer>
+			<key>trace_type</key>
+			<string>TIME_CHANGE</string>
+			<key>description</key>
+			<string>Changing time of transport delivery</string>
+		</dict>
+	</array>
+</dict>
+</plist>

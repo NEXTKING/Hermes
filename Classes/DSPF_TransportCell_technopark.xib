@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DSPF_TourList" rowHeight="57" id="YgZ-c8-eGJ" customClass="DSPF_TransportCell_technopark">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YgZ-c8-eGJ" id="99T-iC-so5">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPa-Im-8nt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gd-IC-JyL">
+                                <rect key="frame" x="11" y="13" width="299" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="LKo-cU-FFT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7gd-IC-JyL" firstAttribute="top" secondItem="oPa-Im-8nt" secondAttribute="top" constant="13" id="4cd-yz-XEn"/>
+                            <constraint firstAttribute="trailing" secondItem="7gd-IC-JyL" secondAttribute="trailing" constant="10" id="EK8-SC-wOe"/>
+                            <constraint firstItem="7gd-IC-JyL" firstAttribute="leading" secondItem="oPa-Im-8nt" secondAttribute="leading" constant="11" id="Q8H-xy-8zt"/>
+                            <constraint firstAttribute="height" constant="54" id="qJC-LA-nXG"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="track_shad.png" translatesAutoresizingMaskIntoConstraints="NO" id="sZx-0C-cGn">
+                        <rect key="frame" x="0.0" y="43" width="320" height="6"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="6" id="vrD-c4-6PB"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="oPa-Im-8nt" secondAttribute="trailing" id="6kh-dN-n0N"/>
+                    <constraint firstItem="sZx-0C-cGn" firstAttribute="top" secondItem="7gd-IC-JyL" secondAttribute="bottom" constant="9" id="PcB-82-mjL"/>
+                    <constraint firstItem="oPa-Im-8nt" firstAttribute="leading" secondItem="99T-iC-so5" secondAttribute="leading" id="Pr1-9G-YmC"/>
+                    <constraint firstItem="oPa-Im-8nt" firstAttribute="top" secondItem="99T-iC-so5" secondAttribute="top" id="Xud-29-Uie"/>
+                    <constraint firstAttribute="bottom" secondItem="sZx-0C-cGn" secondAttribute="bottom" id="gIm-Fs-a1t"/>
+                    <constraint firstItem="sZx-0C-cGn" firstAttribute="leading" secondItem="99T-iC-so5" secondAttribute="leading" id="utT-2b-ecg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sZx-0C-cGn" firstAttribute="width" secondItem="YgZ-c8-eGJ" secondAttribute="width" id="WXU-PX-vfo"/>
+            </constraints>
+            <connections>
+                <outlet property="mainLabel" destination="7gd-IC-JyL" id="cxc-uo-Ebu"/>
+            </connections>
+            <point key="canvasLocation" x="566" y="205"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="track_shad.png" width="640" height="13"/>
+    </resources>
+</document>

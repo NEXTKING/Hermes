@@ -1,0 +1,23 @@
+//
+// Prefix header for all source files of the 'Hermes' target in the 'Hermes' project
+//
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    #import <CoreData/CoreData.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import "Additions.h"
+    #import "ProgramFacility.h"
+    #import "Pgm.h"
+    #import "Cmd.h"
+    #import "Utilities.h"
+    #import "AppStyle.h"
+    #import "DPHDateFormatter.h"
+#endif

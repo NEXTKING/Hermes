@@ -1,0 +1,12 @@
+[submodule "Libraries/JSON"]
+	path = Libraries/JSON
+	url = https://TFS-MacBuildService:Te52ma-2015@tfs.dataphone.ch/tfs/Client/Hermes/_git/ios-lib-json
+[submodule "Libraries/Compression"]
+	path = Libraries/Compression
+	url = https://TFS-MacBuildService:Te52ma-2015@tfs.dataphone.ch/tfs/Client/Hermes/_git/ios-lib-zip
+[submodule "Libraries/Config"]
+	path = Libraries/Config
+	url = https://TFS-MacBuildService:Te52ma-2015@tfs.dataphone.ch/tfs/Client/Hermes/_git/ios-lib-config
+[submodule "Libraries/Scanner"]
+	path = Libraries/Scanner
+	url = https://TFS-MacBuildService:Te52ma-2015@tfs.dataphone.ch/tfs/Client/Hermes/_git/ios-lib-scanner

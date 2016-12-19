@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CF95A634-9293-4765-BBE4-238BEB0C3438</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Compression</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>711041E0ED9623F2CA390E82B983C934C477BEFB</key>
+		<string>https://tfs.dataphone.ch/tfs/Client/Hermes/_git/ios-lib-zip</string>
+		<key>E45EA1B25951C20287F9101DF5FC476C67865B29</key>
+		<string>https://tfs.dataphone.ch/tfs/Client/Hermes/_git/ios-Hermes</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Compression.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>711041E0ED9623F2CA390E82B983C934C477BEFB</key>
+		<string>../..</string>
+		<key>E45EA1B25951C20287F9101DF5FC476C67865B29</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://tfs.dataphone.ch/tfs/Client/Hermes/_git/ios-lib-zip</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>711041E0ED9623F2CA390E82B983C934C477BEFB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E45EA1B25951C20287F9101DF5FC476C67865B29</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>711041E0ED9623F2CA390E82B983C934C477BEFB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Compression</string>
+		</dict>
+	</array>
+</dict>
+</plist>

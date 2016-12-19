@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSPF_Payment_technopark">
+            <connections>
+                <outlet property="accessoryToolbar" destination="S9A-4t-oVS" id="x4M-qe-HO8"/>
+                <outlet property="amountLabel" destination="7AF-Om-JXU" id="VSd-BB-2aV"/>
+                <outlet property="cardTextField" destination="Rvl-Uy-TZf" id="xf6-Op-xtb"/>
+                <outlet property="cashGestureRecognizer" destination="2o2-ID-teT" id="cyG-Sd-lJR"/>
+                <outlet property="cashTextField" destination="r9d-uj-HcJ" id="hQ3-i5-l9e"/>
+                <outlet property="controlsContainer" destination="Arj-oI-J7S" id="vPg-Pe-TLj"/>
+                <outlet property="controlsContainerHeightConstraint" destination="Hx7-ce-VUB" id="geu-ja-koh"/>
+                <outlet property="printerActivityIndicator" destination="SHp-nt-TNp" id="69f-1t-uW1"/>
+                <outlet property="printerInfoLabel" destination="AfC-L3-07V" id="Tsd-fB-AUK"/>
+                <outlet property="scrollView" destination="aMH-9m-eug" id="eCC-mZ-ovE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="DSPF_Pa">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="technoparkBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ROS-Iz-w6A">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <gestureRecognizers/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-9m-eug" customClass="UISmartScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма к оплате" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXz-aD-yAQ">
+                            <rect key="frame" x="14" y="18" width="292" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="hlx-jA-uGt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.08235294118" green="0.46274509800000002" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 000 ₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AF-Om-JXU">
+                            <rect key="frame" x="16" y="53" width="289" height="39"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="Xkd-Yz-L8s"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3R-tg-Mbi">
+                            <rect key="frame" x="16" y="217" width="289" height="48"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mastercard.png" translatesAutoresizingMaskIntoConstraints="NO" id="4SQ-xo-zsJ">
+                                    <rect key="frame" x="48" y="10" width="32" height="30"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="American_Express_logo.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="FnD-BD-UgM">
+                                    <rect key="frame" x="88" y="10" width="32" height="30"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Diners_Club_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="foA-aj-kbf">
+                                    <rect key="frame" x="128" y="10" width="32" height="30"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="discover.png" translatesAutoresizingMaskIntoConstraints="NO" id="fae-4a-htT">
+                                    <rect key="frame" x="168" y="10" width="32" height="30"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnionPay.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oq1-tS-Crp">
+                                    <rect key="frame" x="208" y="10" width="32" height="30"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="JCB_Cards.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="j0O-ET-9mO">
+                                    <rect key="frame" x="248" y="10" width="32" height="30"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Visa_Inc._logo.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="CZx-np-74x">
+                                    <rect key="frame" x="8" y="10" width="32" height="30"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="78q-HV-gcr"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHg-as-eZ9">
+                            <rect key="frame" x="14" y="102" width="292" height="59"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="59" id="AVp-Lq-Q3E"/>
+                            </constraints>
+                            <string key="text">Выберите удобный способ оплаты. "Картой" - если покупка оплачивается банковской картой или нажмите кнопку "Наличными" - если расчет будет произведен наличным способом.</string>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="9"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите способ оплаты" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1Y-Ik-qh2">
+                            <rect key="frame" x="54" y="279" width="213" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="213" id="hsd-rG-aAe"/>
+                                <constraint firstAttribute="height" constant="21" id="rIy-e8-seF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Arj-oI-J7S">
+                            <rect key="frame" x="40" y="320" width="240" height="157"/>
+                            <subviews>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Vector Smart Object_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="vEe-7a-E5e">
+                                    <rect key="frame" x="23" y="3" width="67" height="50"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="ksc-oc-Mb9" appends="YES" id="siH-rY-wbs"/>
+                                    </connections>
+                                </imageView>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Vector Smart Object.png" translatesAutoresizingMaskIntoConstraints="NO" id="zVW-d6-CmM">
+                                    <rect key="frame" x="141" y="0.0" width="75" height="55"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="2o2-ID-teT" appends="YES" id="xlh-6e-zi1"/>
+                                    </connections>
+                                </imageView>
+                                <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rvl-Uy-TZf">
+                                    <rect key="frame" x="8" y="64" width="97" height="30"/>
+                                    <color key="backgroundColor" red="0.14901960780000001" green="0.25490196079999999" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="xZm-2E-u2y"/>
+                                    </connections>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfC-L3-07V">
+                                    <rect key="frame" x="-38" y="102" width="315" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="TNg-Qh-qpb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="SHp-nt-TNp">
+                                    <rect key="frame" x="110" y="129" width="20" height="20"/>
+                                </activityIndicatorView>
+                                <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9d-uj-HcJ">
+                                    <rect key="frame" x="130" y="64" width="97" height="30"/>
+                                    <color key="backgroundColor" red="0.14901960780000001" green="0.25490196079999999" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="91T-5R-A1b"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="SHp-nt-TNp" secondAttribute="bottom" constant="8" id="0fY-zK-xyq"/>
+                                <constraint firstAttribute="height" constant="157" id="Hx7-ce-VUB"/>
+                                <constraint firstItem="SHp-nt-TNp" firstAttribute="centerX" secondItem="Arj-oI-J7S" secondAttribute="centerX" id="M7z-RJ-Jyh"/>
+                                <constraint firstItem="SHp-nt-TNp" firstAttribute="top" secondItem="AfC-L3-07V" secondAttribute="bottom" constant="6" id="cdx-Gb-ILX"/>
+                                <constraint firstAttribute="width" constant="240" id="fuz-Lw-EF1"/>
+                                <constraint firstItem="AfC-L3-07V" firstAttribute="top" secondItem="Arj-oI-J7S" secondAttribute="top" priority="750" constant="102" id="gZS-jM-hZl"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К оплате принимаются карты: VISA, MASTERCARD, AMERICAN EXPRESS, DINERS CLUB, DISCOVER, UNIPAY, JCB" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58W-Xm-jEU">
+                            <rect key="frame" x="14" y="162" width="292" height="47"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="47" id="KmG-Da-6Yh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="9"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD5-eX-bei" customClass="DSPF_CustomButton_technopark">
+                            <rect key="frame" x="74" y="482" width="172" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="172" id="TFd-KR-PY9"/>
+                                <constraint firstAttribute="height" constant="44" id="dsZ-s9-Lmy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                            <state key="normal" title="Смешанная оплата"/>
+                            <connections>
+                                <action selector="mixedPaymentAction:" destination="-1" eventType="touchUpInside" id="Qvr-JI-Fu7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="58W-Xm-jEU" firstAttribute="top" secondItem="kHg-as-eZ9" secondAttribute="bottom" constant="1" id="5Lg-bM-8kd"/>
+                        <constraint firstAttribute="trailing" secondItem="58W-Xm-jEU" secondAttribute="trailing" constant="14" id="72w-Bi-jX5"/>
+                        <constraint firstItem="7AF-Om-JXU" firstAttribute="leading" secondItem="aMH-9m-eug" secondAttribute="leading" constant="16" id="A4Y-Hy-5Pq"/>
+                        <constraint firstItem="kHg-as-eZ9" firstAttribute="leading" secondItem="aMH-9m-eug" secondAttribute="leading" constant="14" id="AFr-zG-FmJ"/>
+                        <constraint firstItem="i1Y-Ik-qh2" firstAttribute="top" secondItem="h3R-tg-Mbi" secondAttribute="bottom" constant="14" id="Bk9-ly-J3D"/>
+                        <constraint firstAttribute="trailing" secondItem="AfC-L3-07V" secondAttribute="trailing" constant="3" id="Cve-cy-rl1"/>
+                        <constraint firstItem="Arj-oI-J7S" firstAttribute="top" secondItem="i1Y-Ik-qh2" secondAttribute="bottom" constant="20" id="IRW-ex-nBv"/>
+                        <constraint firstItem="AfC-L3-07V" firstAttribute="leading" secondItem="aMH-9m-eug" secondAttribute="leading" constant="2" id="MGh-dN-Vis"/>
+                        <constraint firstItem="RD5-eX-bei" firstAttribute="top" secondItem="Arj-oI-J7S" secondAttribute="bottom" constant="5" id="OxN-d8-dvD"/>
+                        <constraint firstItem="XXz-aD-yAQ" firstAttribute="top" secondItem="aMH-9m-eug" secondAttribute="top" constant="18" id="QdJ-ME-49B"/>
+                        <constraint firstAttribute="bottom" secondItem="RD5-eX-bei" secondAttribute="bottom" constant="26" id="Syb-39-TNE"/>
+                        <constraint firstItem="kHg-as-eZ9" firstAttribute="top" secondItem="7AF-Om-JXU" secondAttribute="bottom" constant="10" id="U8H-iw-6P1"/>
+                        <constraint firstItem="h3R-tg-Mbi" firstAttribute="leading" secondItem="aMH-9m-eug" secondAttribute="leading" constant="16" id="Unz-Tm-Mr2"/>
+                        <constraint firstItem="RD5-eX-bei" firstAttribute="centerX" secondItem="aMH-9m-eug" secondAttribute="centerX" id="VGM-JC-iz6"/>
+                        <constraint firstAttribute="trailing" secondItem="kHg-as-eZ9" secondAttribute="trailing" constant="14" id="bc2-ty-dMG"/>
+                        <constraint firstItem="7AF-Om-JXU" firstAttribute="top" secondItem="XXz-aD-yAQ" secondAttribute="bottom" constant="-1" id="dL3-dC-Vbv"/>
+                        <constraint firstAttribute="trailing" secondItem="XXz-aD-yAQ" secondAttribute="trailing" constant="14" id="e6E-fT-NBU"/>
+                        <constraint firstItem="XXz-aD-yAQ" firstAttribute="leading" secondItem="aMH-9m-eug" secondAttribute="leading" constant="14" id="gDJ-KV-kKm"/>
+                        <constraint firstAttribute="trailing" secondItem="7AF-Om-JXU" secondAttribute="trailing" constant="15" id="gT8-Tg-lB5"/>
+                        <constraint firstItem="i1Y-Ik-qh2" firstAttribute="centerX" secondItem="aMH-9m-eug" secondAttribute="centerX" id="lFE-n8-7mm"/>
+                        <constraint firstItem="h3R-tg-Mbi" firstAttribute="top" secondItem="58W-Xm-jEU" secondAttribute="bottom" constant="8" id="nF3-AR-xEV"/>
+                        <constraint firstItem="58W-Xm-jEU" firstAttribute="leading" secondItem="aMH-9m-eug" secondAttribute="leading" constant="14" id="qbF-fO-XuN"/>
+                        <constraint firstAttribute="trailing" secondItem="h3R-tg-Mbi" secondAttribute="trailing" constant="15" id="xpC-Fw-vjv"/>
+                        <constraint firstItem="Arj-oI-J7S" firstAttribute="centerX" secondItem="aMH-9m-eug" secondAttribute="centerX" id="y0H-gg-fbt"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ROS-Iz-w6A" secondAttribute="bottom" id="54T-t7-IGl"/>
+                <constraint firstItem="aMH-9m-eug" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MBY-NA-5y9"/>
+                <constraint firstAttribute="trailing" secondItem="aMH-9m-eug" secondAttribute="trailing" id="MC3-4A-xcW"/>
+                <constraint firstAttribute="bottom" secondItem="aMH-9m-eug" secondAttribute="bottom" id="MhJ-fb-YT8"/>
+                <constraint firstAttribute="trailing" secondItem="ROS-Iz-w6A" secondAttribute="trailing" id="PGC-KW-zQ9"/>
+                <constraint firstItem="ROS-Iz-w6A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RNq-cp-0J9"/>
+                <constraint firstItem="ROS-Iz-w6A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SiU-jp-Bhw"/>
+                <constraint firstItem="XXz-aD-yAQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="ZI2-R5-qtc"/>
+                <constraint firstAttribute="trailing" secondItem="XXz-aD-yAQ" secondAttribute="trailing" constant="14" id="iGA-ZG-lMj"/>
+                <constraint firstItem="aMH-9m-eug" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tyP-uf-RGL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-125" y="460"/>
+        </view>
+        <tapGestureRecognizer id="2o2-ID-teT">
+            <connections>
+                <action selector="printAction:" destination="-1" id="9B2-Fs-CLc"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="ksc-oc-Mb9">
+            <connections>
+                <action selector="cardAction:" destination="-1" id="CcV-cS-5gW"/>
+            </connections>
+        </tapGestureRecognizer>
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="S9A-4t-oVS">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <items>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="vt2-rB-ZA1"/>
+                <barButtonItem title="Готово" style="done" id="iNK-dD-Ca1">
+                    <connections>
+                        <action selector="toolbarDoneAction:" destination="-1" id="N7W-3K-k39"/>
+                    </connections>
+                </barButtonItem>
+            </items>
+        </toolbar>
+    </objects>
+    <resources>
+        <image name="American_Express_logo.svg.png" width="34" height="33"/>
+        <image name="Diners_Club_Logo.png" width="40" height="31"/>
+        <image name="JCB_Cards.svg.png" width="43" height="33"/>
+        <image name="UnionPay.png" width="52" height="33"/>
+        <image name="Vector Smart Object.png" width="141" height="108"/>
+        <image name="Vector Smart Object_2.png" width="120" height="79"/>
+        <image name="Visa_Inc._logo.svg.png" width="78" height="25"/>
+        <image name="discover.png" width="53" height="33"/>
+        <image name="mastercard.png" width="52" height="32"/>
+        <image name="technoparkBackground.png" width="640" height="1136"/>
+    </resources>
+</document>

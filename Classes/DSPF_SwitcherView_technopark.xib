@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DSPF_SwitcherView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switcher_header_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="pG9-qr-RdU">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                    <animations/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7g6-1x-eGY">
+                    <rect key="frame" x="277" y="6" width="43" height="44"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="NBU-xj-NUX"/>
+                        <constraint firstAttribute="width" constant="43" id="fME-R6-1T5"/>
+                    </constraints>
+                    <state key="normal" image="icn_back.png"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RGt-Ea-Jz5">
+                    <rect key="frame" x="51" y="0.0" width="218" height="56"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xx-3L-QuL">
+                    <rect key="frame" x="0.0" y="6" width="43" height="44"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="urb-Ba-GgV"/>
+                        <constraint firstAttribute="width" constant="43" id="z8E-t5-6KB"/>
+                    </constraints>
+                    <state key="normal" image="icn_forward.png"/>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="RGt-Ea-Jz5" firstAttribute="leading" secondItem="5xx-3L-QuL" secondAttribute="trailing" constant="8" id="Cd7-49-D4B"/>
+                <constraint firstItem="5xx-3L-QuL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EVa-2k-taR"/>
+                <constraint firstItem="5xx-3L-QuL" firstAttribute="centerY" secondItem="pG9-qr-RdU" secondAttribute="centerY" id="R5q-8C-kYp"/>
+                <constraint firstAttribute="bottom" secondItem="RGt-Ea-Jz5" secondAttribute="bottom" id="RHL-xA-MvO"/>
+                <constraint firstItem="pG9-qr-RdU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S1g-3c-H77"/>
+                <constraint firstAttribute="trailing" secondItem="7g6-1x-eGY" secondAttribute="trailing" id="T0H-IE-ySW"/>
+                <constraint firstItem="7g6-1x-eGY" firstAttribute="leading" secondItem="RGt-Ea-Jz5" secondAttribute="trailing" constant="8" id="Y7H-tt-TrR"/>
+                <constraint firstItem="7g6-1x-eGY" firstAttribute="centerY" secondItem="pG9-qr-RdU" secondAttribute="centerY" id="cpS-AX-BCA"/>
+                <constraint firstAttribute="bottom" secondItem="pG9-qr-RdU" secondAttribute="bottom" id="gVw-AK-XIJ"/>
+                <constraint firstAttribute="trailing" secondItem="pG9-qr-RdU" secondAttribute="trailing" id="jkw-4R-cJR"/>
+                <constraint firstItem="RGt-Ea-Jz5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lKk-5d-F5c"/>
+                <constraint firstItem="pG9-qr-RdU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="y7J-VO-zKG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="nextButton" destination="7g6-1x-eGY" id="nUS-Sf-HcV"/>
+                <outlet property="prevButton" destination="5xx-3L-QuL" id="TDg-ot-hxp"/>
+                <outlet property="titleLabel" destination="RGt-Ea-Jz5" id="vah-Sb-x2e"/>
+            </connections>
+            <point key="canvasLocation" x="443" y="315"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icn_back.png" width="11" height="19"/>
+        <image name="icn_forward.png" width="11" height="19"/>
+        <image name="switcher_header_background.png" width="640" height="122"/>
+    </resources>
+</document>

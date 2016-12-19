@@ -1,0 +1,91 @@
+//
+//  DSPF_Synchronisation.h
+//  Hermes
+//
+//  Created by Attila Teglas on 03/19/12
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "DSPF_Activity.h"
+#import "DPHButtonsView.h"
+
+
+@interface DSPF_Synchronisation : UIViewController <DSPF_ActivityDelegate> {
+    IBOutlet UILabel    *standVomSyncLabel;
+    IBOutlet UILabel    *abholauftraegeSyncLabel;
+    IBOutlet UILabel    *fahrplanSyncLabel;
+    IBOutlet UILabel    *sonderzieleSyncLabel; 
+    IBOutlet UILabel    *orteSyncLabel;
+    IBOutlet UILabel    *tourenSyncLabel;
+    IBOutlet DPHButtonsView *buttons;
+
+    IBOutlet UILabel	*lastUpdateOfUsers;
+	IBOutlet UILabel    *lastUpdateOfTruckTypes;
+	IBOutlet UILabel    *lastUpdateOfTrucks;
+	IBOutlet UILabel    *lastUpdateOfLocationGroups;
+    IBOutlet UILabel    *lastUpdateOfLocationAliases;
+	IBOutlet UILabel    *lastUpdateOfLocations;
+	IBOutlet UILabel    *lastUpdateOfTours;
+	IBOutlet UILabel    *lastUpdateOfDepartures;
+    IBOutlet UILabel    *lastUpdateOfTransportGroups;
+    IBOutlet UILabel    *lastUpdateOfTransports;
+
+@private
+	NSManagedObjectContext *ctx;
+    dispatch_queue_t        importQueue;
+    NSMutableDictionary    *downloadBuffer;
+    NSMutableDictionary    *downloadCacheControl;
+    NSHTTPURLResponse      *downloadResponse;
+    NSData                 *downloadData;
+    NSString			   *udid;
+    NSMutableArray         *taskControl;
+    BOOL                    savedIdleTimerStatus;
+    BOOL                    syncERR;
+    BOOL                    newsletterAlert;
+}
+@property (nonatomic, retain) IBOutlet UILabel  *standVomSyncLabel;
+@property (nonatomic, retain) IBOutlet UILabel  *abholauftraegeSyncLabel;
+@property (nonatomic, retain) IBOutlet UILabel  *fahrplanSyncLabel;
+@property (nonatomic, retain) IBOutlet UILabel  *sonderzieleSyncLabel;
+@property (nonatomic, retain) IBOutlet UILabel  *orteSyncLabel;
+@property (nonatomic, retain) IBOutlet UILabel  *tourenSyncLabel;
+@property (nonatomic, retain) IBOutlet UILabel  *unsynchronizedLabel;
+@property (nonatomic, retain) IBOutlet DPHButtonsView *buttons;
+
+
+@property (retain) IBOutlet UILabel	*lastUpdateOfUsers;
+@property (retain) IBOutlet UILabel *lastUpdateOfTruckTypes;
+@property (retain) IBOutlet UILabel *lastUpdateOfTrucks;
+@property (retain) IBOutlet UILabel *lastUpdateOfLocationGroups;
+@property (retain) IBOutlet UILabel *lastUpdateOfLocationAliases;
+@property (retain) IBOutlet UILabel *lastUpdateOfLocations;
+@property (retain) IBOutlet UILabel *lastUpdateOfTours;
+@property (retain) IBOutlet UILabel *lastUpdateOfDepartures;
+@property (retain) IBOutlet UILabel *lastUpdateOfTransportGroups;
+@property (retain) IBOutlet UILabel *lastUpdateOfTransports;
+@property (retain) IBOutlet UILabel *countOfUnsynchronizedLabel;
+
+@property (nonatomic, retain) NSMutableDictionary    *downloadBuffer;
+@property (nonatomic, retain) NSMutableDictionary    *downloadCacheControl;
+<<<<<<< HEAD
+@property (nonatomic, retain) NSManagedObjectContext *ctx;
+=======
+@property (nonatomic, retain) NSHTTPURLResponse      *downloadResponse;
+@property (nonatomic, retain) NSData                 *downloadData;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+>>>>>>> 6d67faada74c653309d159600fb4b46fb3014786
+@property (nonatomic, retain) NSString				 *udid;
+@property (nonatomic, retain) NSMutableArray         *taskControl;
+@property (nonatomic)		  BOOL                    savedIdleTimerStatus;
+@property (nonatomic)		  BOOL                    syncERR;
+@property (nonatomic)         BOOL                    newsletterAlert;
+
+- (IBAction)syncALL;
+- (IBAction)syncTOUR;
+- (IBAction)syncTOURwithOption:(NSString *)option;
+
++ (NSString *) hermesServerURL;
++ (NSArray *) arrayFromDownloadedServerData:(NSData *) data downloadingKey:(NSString *) aKey;
+
+@end

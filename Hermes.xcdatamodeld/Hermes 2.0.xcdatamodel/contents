@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12F37" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ArchiveOrderHead" representedClassName="ArchiveOrderHead" syncable="YES">
+        <attribute name="deliveryDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="order_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="orderDate" optional="YES" attributeType="Date" defaultDateTimeInterval="401882400" defaultValueString="TODAY" indexed="YES" syncable="YES"/>
+        <attribute name="orderState" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="remoteOrderID" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="store_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="transmissionDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <relationship name="archiveOrderLine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArchiveOrderLine" inverseName="archiveOrderHead" inverseEntity="ArchiveOrderLine" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="archiveOrderHead" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="ArchiveOrderLine" representedClassName="ArchiveOrderLine" syncable="YES">
+        <attribute name="itemID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="itemInserted" optional="YES" attributeType="Date" defaultDateTimeInterval="401882400" defaultValueString="“now’" indexed="YES" syncable="YES"/>
+        <attribute name="itemQTY" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="itemUpdated" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="templateName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="archiveOrderHead" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ArchiveOrderHead" inverseName="archiveOrderLine" inverseEntity="ArchiveOrderHead" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="archiveOrderLine" inverseEntity="Item" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="archiveOrderLine" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="BasketAnalysis" representedClassName="BasketAnalysis" syncable="YES">
+        <attribute name="analyzedItemID" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="itemID" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="analyzedItem" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="basketAnalyzedItem" inverseEntity="Item" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="basketAnalysis" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Departure" representedClassName="Departure" syncable="YES">
+        <attribute name="arrival" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="canceled" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="confirmed" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="currentTourBit" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="currentTourStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="dayOfWeek" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="departure" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="departure_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="infoMessage" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="infoMessageDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="infoText" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="onDemand" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="predefinedOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="sequence" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="location_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="departure_id" inverseEntity="Location" indexed="YES" syncable="YES"/>
+        <relationship name="tour_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Tour" inverseName="departure_id" inverseEntity="Tour" indexed="YES" syncable="YES"/>
+        <relationship name="transport_group_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Transport_Group" inverseName="departure_id" inverseEntity="Transport_Group" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="from_departure_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="FaQ" representedClassName="FaQ" syncable="YES">
+        <attribute name="answer" attributeType="String" syncable="YES"/>
+        <attribute name="faqID" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="faqPositionNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="localeCode" optional="YES" attributeType="String" defaultValueString="de" indexed="YES" syncable="YES"/>
+        <attribute name="question" attributeType="String" syncable="YES"/>
+        <relationship name="answerKeywords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Keyword" inverseName="faqAnswerHits" inverseEntity="Keyword" syncable="YES"/>
+        <relationship name="questionKeywords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Keyword" inverseName="faqQuestionHits" inverseEntity="Keyword" syncable="YES"/>
+    </entity>
+    <entity name="Hitlist" representedClassName="Hitlist" syncable="YES">
+        <attribute name="positionNumber" attributeType="Integer 16" indexed="YES" syncable="YES"/>
+        <attribute name="productGroup" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="item" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="hitlist" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="InventoryHead" representedClassName="InventoryHead" syncable="YES">
+        <attribute name="inventoryDate" attributeType="Date" syncable="YES"/>
+        <attribute name="inventoryID" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="inventorySector" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="inventoryState" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="remoteInventoryID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="transmissionDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <relationship name="inventoryLine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InventoryLine" inverseName="inventoryHead" inverseEntity="InventoryLine" syncable="YES"/>
+    </entity>
+    <entity name="InventoryLine" representedClassName="InventoryLine" syncable="YES">
+        <attribute name="itemBarCode" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="itemID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="itemQTY" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemQTYFixed" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="itemQTYOriginal" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="positionInserted" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="positionNumber" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="positionStatus" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="positionTransmitted" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="positionUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="correctionUser" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="inventoryLineCorrection" inverseEntity="User" syncable="YES"/>
+        <relationship name="inventoryHead" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="InventoryHead" inverseName="inventoryLine" inverseEntity="InventoryHead" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="inventoryLine" inverseEntity="Item" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="inventoryLine" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="bestBeforeDays" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="buyingPrice" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="countryOfOriginCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="itemCategoryCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="itemCertificationCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="itemID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="itemPackageCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="newcomerBit" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="orderUnitBoxQTY" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="orderUnitCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="orderUnitExtraChargeQTY" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="orderUnitLayerQTY" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="orderUnitPalletQTY" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="priceText" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="productGroup" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="salesUnitCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="salesUnitsPerOrderUnit" optional="YES" attributeType="Integer 32" defaultValueString="1" syncable="YES"/>
+        <attribute name="storeAssortmentBit" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="storeAssortmentCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trademarkHolder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valueAddedTax" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="archiveOrderLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArchiveOrderLine" inverseName="item" inverseEntity="ArchiveOrderLine" syncable="YES"/>
+        <relationship name="basketAnalysis" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="BasketAnalysis" inverseName="item" inverseEntity="BasketAnalysis" syncable="YES"/>
+        <relationship name="basketAnalyzedItem" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="BasketAnalysis" inverseName="analyzedItem" inverseEntity="BasketAnalysis" syncable="YES"/>
+        <relationship name="hitlist" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Hitlist" inverseName="item" inverseEntity="Hitlist" syncable="YES"/>
+        <relationship name="inventoryLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InventoryLine" inverseName="item" inverseEntity="InventoryLine" syncable="YES"/>
+        <relationship name="item" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="item" inverseEntity="Item" syncable="YES"/>
+        <relationship name="itemCode" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemCode" inverseName="item" inverseEntity="ItemCode" syncable="YES"/>
+        <relationship name="itemDescription" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemDescription" inverseName="item" inverseEntity="ItemDescription" syncable="YES"/>
+        <relationship name="itemProductInformation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemProductInformation" inverseName="item" inverseEntity="ItemProductInformation" syncable="YES"/>
+        <relationship name="promotion" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Promotion" inverseName="item" inverseEntity="Promotion" syncable="YES"/>
+        <relationship name="templateOrderLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TemplateOrderLine" inverseName="item" inverseEntity="TemplateOrderLine" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="itemID"/>
+            </compoundIndex>
+            <compoundIndex>
+                <index value="storeAssortmentBit"/>
+                <index value="itemID"/>
+            </compoundIndex>
+            <compoundIndex>
+                <index value="newcomerBit"/>
+                <index value="itemID"/>
+            </compoundIndex>
+            <compoundIndex>
+                <index value="trademarkHolder"/>
+                <index value="itemID"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="ItemCode" representedClassName="ItemCode" syncable="YES">
+        <attribute name="code" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="distinction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="itemQTY" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="itemCode" inverseEntity="Item" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="code"/>
+                <index value="itemID"/>
+                <index value="distinction"/>
+            </compoundIndex>
+            <compoundIndex>
+                <index value="itemID"/>
+                <index value="code"/>
+                <index value="distinction"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="ItemDescription" representedClassName="ItemDescription" syncable="YES">
+        <attribute name="itemID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="localeCode" optional="YES" attributeType="String" defaultValueString="de" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <relationship name="descriptionKeywords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Keyword" inverseName="descriptionHits" inverseEntity="Keyword" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="itemDescription" inverseEntity="Item" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="itemID"/>
+                <index value="localeCode"/>
+            </compoundIndex>
+            <compoundIndex>
+                <index value="text"/>
+                <index value="localeCode"/>
+                <index value="itemID"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="ItemProductInformation" representedClassName="ItemProductInformation" syncable="YES">
+        <attribute name="itemID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="localeCode" optional="YES" attributeType="String" defaultValueString="de" indexed="YES" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="itemProductInformation" inverseEntity="Item" syncable="YES"/>
+        <relationship name="productInformationKeywords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Keyword" inverseName="productInformationHits" inverseEntity="Keyword" syncable="YES"/>
+    </entity>
+    <entity name="Keyword" representedClassName="Keyword" syncable="YES">
+        <attribute name="localeCode" attributeType="String" defaultValueString="de" indexed="YES" syncable="YES"/>
+        <attribute name="word" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="descriptionHits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemDescription" inverseName="descriptionKeywords" inverseEntity="ItemDescription" syncable="YES"/>
+        <relationship name="faqAnswerHits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FaQ" inverseName="answerKeywords" inverseEntity="FaQ" syncable="YES"/>
+        <relationship name="faqQuestionHits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FaQ" inverseName="questionKeywords" inverseEntity="FaQ" syncable="YES"/>
+        <relationship name="newsletterHits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Newsletter" inverseName="newsletterKeywords" inverseEntity="Newsletter" syncable="YES"/>
+        <relationship name="productInformationHits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemProductInformation" inverseName="productInformationKeywords" inverseEntity="ItemProductInformation" syncable="YES"/>
+    </entity>
+    <entity name="LocalizedDescription" representedClassName="LocalizedDescription" syncable="YES">
+        <attribute name="code" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="key" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="localeCode" optional="YES" attributeType="String" defaultValueString="de" indexed="YES" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="contact_email" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="contact_name" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="contact_phone" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="country_code" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="erase_flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="location_code" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="location_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="location_name" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <relationship name="departure_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Departure" inverseName="location_id" inverseEntity="Departure" indexed="YES" syncable="YES"/>
+        <relationship name="location_alias_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location_Alias" inverseName="location_id" inverseEntity="Location_Alias" indexed="YES" syncable="YES"/>
+        <relationship name="location_group_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location_Group" inverseName="location_id" inverseEntity="Location_Group" indexed="YES" syncable="YES"/>
+        <relationship name="recipient_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipient" inverseName="location_id" inverseEntity="Recipient" indexed="YES" syncable="YES"/>
+        <relationship name="tour_exception_id" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Tour_Exception" inverseName="location_id" inverseEntity="Tour_Exception" indexed="YES" syncable="YES"/>
+        <relationship name="transport_destination_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="to_location_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+        <relationship name="transport_origin_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="from_location_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Location_Alias" representedClassName="Location_Alias" syncable="YES">
+        <attribute name="alias" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="location_alias_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="location_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="location_alias_id" inverseEntity="Location" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Location_Group" representedClassName="Location_Group" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="location_group_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="location_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="location_group_id" inverseEntity="Location" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Newsletter" representedClassName="Newsletter" syncable="YES">
+        <attribute name="alertBit" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="localeCode" optional="YES" attributeType="String" defaultValueString="de" indexed="YES" syncable="YES"/>
+        <attribute name="newsletterID" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="newsletterPositionNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="text" attributeType="String" syncable="YES"/>
+        <relationship name="newsletterKeywords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Keyword" inverseName="newsletterHits" inverseEntity="Keyword" syncable="YES"/>
+    </entity>
+    <entity name="Payment_Type" representedClassName="Payment_Type" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="payment_type_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="payment_type_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Promotion" representedClassName="Promotion" syncable="YES">
+        <attribute name="itemID" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="promotion" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Recipient" representedClassName="Recipient" syncable="YES">
+        <attribute name="recipient_name" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <relationship name="location_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="recipient_id" inverseEntity="Location" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Store" representedClassName="Store" syncable="YES">
+        <attribute name="accountsPayableNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="accountsReceivableNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="associatedLocation" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="localeCode" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="store_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="storeName" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+    </entity>
+    <entity name="TemplateOrderHead" representedClassName="TemplateOrderHead" syncable="YES">
+        <attribute name="isUserDomain" optional="YES" attributeType="Boolean" defaultValueString="YES" indexed="YES" syncable="YES"/>
+        <attribute name="template_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="templateDate" optional="YES" attributeType="Date" defaultDateTimeInterval="401882400" defaultValueString="TODAY" indexed="YES" syncable="YES"/>
+        <attribute name="templateDeliveryFrom" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="templateDeliveryUntil" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="templateName" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="templateState" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="templateValidFrom" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="templateValidUntil" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="transmissionDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <relationship name="templateOrderLine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TemplateOrderLine" inverseName="templateOrderHead" inverseEntity="TemplateOrderLine" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="templateOrderHead" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="TemplateOrderLine" representedClassName="TemplateOrderLine" syncable="YES">
+        <attribute name="infoText" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="itemID" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="itemInserted" optional="YES" attributeType="Date" defaultDateTimeInterval="401882400" defaultValueString="&quot;now&quot;" indexed="YES" syncable="YES"/>
+        <attribute name="itemQTY" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemUpdated" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="sortValue" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="templateOrderLine" inverseEntity="Item" syncable="YES"/>
+        <relationship name="templateOrderHead" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TemplateOrderHead" inverseName="templateOrderLine" inverseEntity="TemplateOrderHead" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="templateOrderLine" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Term" representedClassName="Term" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="term_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="transprot_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="term_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Tour" representedClassName="Tour" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="device_udid" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="tour_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="departure_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Departure" inverseName="tour_id" inverseEntity="Departure" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="tour_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Tour_Exception" representedClassName="Tour_Exception" syncable="YES">
+        <attribute name="from_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="to_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="tour_exception_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tour_exception_reason" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="location_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="tour_exception_id" inverseEntity="Location" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Trace_Log" representedClassName="Trace_Log" syncable="YES">
+        <attribute name="receipt_data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="receipt_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="trace_log_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="trace_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="trace_type_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Trace_Type" inverseName="trace_log_id" inverseEntity="Trace_Type" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Transport" inverseName="trace_log_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+        <relationship name="truck_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Truck" inverseName="trace_log_id" inverseEntity="Truck" indexed="YES" syncable="YES"/>
+        <relationship name="user_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="trace_log_id" inverseEntity="User" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Trace_Type" representedClassName="Trace_Type" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="trace_type_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="trace_log_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trace_Log" inverseName="trace_type_id" inverseEntity="Trace_Log" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="trace_type_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Transport" representedClassName="Transport" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="currency" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="isPallet" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="occurrences" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingArea" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="transport_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <relationship name="from_departure_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Departure" inverseName="transport_id" inverseEntity="Departure" indexed="YES" syncable="YES"/>
+        <relationship name="from_location_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="transport_origin_id" inverseEntity="Location" indexed="YES" syncable="YES"/>
+        <relationship name="payment_type_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Payment_Type" inverseName="transport_id" inverseEntity="Payment_Type" indexed="YES" syncable="YES"/>
+        <relationship name="term_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Term" inverseName="transprot_id" inverseEntity="Term" indexed="YES" syncable="YES"/>
+        <relationship name="to_location_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="transport_destination_id" inverseEntity="Location" indexed="YES" syncable="YES"/>
+        <relationship name="tour_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Tour" inverseName="transport_id" inverseEntity="Tour" indexed="YES" syncable="YES"/>
+        <relationship name="trace_log_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trace_Log" inverseName="transport_id" inverseEntity="Trace_Log" indexed="YES" syncable="YES"/>
+        <relationship name="trace_type_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Trace_Type" inverseName="transport_id" inverseEntity="Trace_Type" indexed="YES" syncable="YES"/>
+        <relationship name="transport_box_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Transport_Box" inverseName="transport_id" inverseEntity="Transport_Box" indexed="YES" syncable="YES"/>
+        <relationship name="transport_group_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Transport_Group" inverseName="transport_id" inverseEntity="Transport_Group" indexed="YES" syncable="YES"/>
+        <relationship name="transport_packaging_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Transport_Packaging" inverseName="transport_id" inverseEntity="Transport_Packaging" syncable="YES"/>
+    </entity>
+    <entity name="Transport_Box" representedClassName="Transport_Box" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="transport_box_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Transport_Group" representedClassName="Transport_Group" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="contractee_code" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="customer" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="execution_time" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="handOutAgainstReceipt" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="info_text" optional="YES" attributeType="String" maxValueString="512" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="task" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="transport_group_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="departure_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Departure" inverseName="transport_group_id" inverseEntity="Departure" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="transport_group_id" inverseEntity="Transport" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Transport_Packaging" representedClassName="Transport_Packaging" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" indexed="YES" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="footprint_x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="footprint_y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="footprint_z" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isRelevantForTransportation" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="transport_packaging_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="transport_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transport" inverseName="transport_packaging_id" inverseEntity="Transport" syncable="YES"/>
+    </entity>
+    <entity name="Truck" representedClassName="Truck" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="device_udid" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="truck_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="trace_log_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trace_Log" inverseName="truck_id" inverseEntity="Trace_Log" indexed="YES" syncable="YES"/>
+        <relationship name="truck_type_id" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Truck_Type" inverseName="truck_id" inverseEntity="Truck_Type" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Truck_Type" representedClassName="Truck_Type" syncable="YES">
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="truck_type" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="truck_type_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="truck_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Truck" inverseName="truck_type_id" inverseEntity="Truck" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="description_text" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="functions" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="isEnabled" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localeCode" optional="YES" attributeType="String" defaultValueString="de" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <attribute name="user_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" defaultValueString="n/a" syncable="YES"/>
+        <relationship name="archiveOrderHead" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArchiveOrderHead" inverseName="user" inverseEntity="ArchiveOrderHead" syncable="YES"/>
+        <relationship name="archiveOrderLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArchiveOrderLine" inverseName="user" inverseEntity="ArchiveOrderLine" syncable="YES"/>
+        <relationship name="inventoryLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InventoryLine" inverseName="user" inverseEntity="InventoryLine" syncable="YES"/>
+        <relationship name="inventoryLineCorrection" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InventoryLine" inverseName="correctionUser" inverseEntity="InventoryLine" syncable="YES"/>
+        <relationship name="templateOrderHead" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TemplateOrderHead" inverseName="user" inverseEntity="TemplateOrderHead" syncable="YES"/>
+        <relationship name="templateOrderLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TemplateOrderLine" inverseName="user" inverseEntity="TemplateOrderLine" syncable="YES"/>
+        <relationship name="trace_log_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trace_Log" inverseName="user_id" inverseEntity="Trace_Log" indexed="YES" syncable="YES"/>
+    </entity>
+    <fetchRequest name="FetchItemCodeForDataImport" entity="ItemCode" predicateString="code == $FRQcode"/>
+    <fetchRequest name="FetchItemCodeForDataImport1" entity="ItemCode" predicateString="code == $FRQcode"/>
+    <fetchRequest name="FetchItemCodeForDataImportWithDistinction" entity="ItemCode" predicateString="code == $FRQcode AND distinction == $FRQdistinction"/>
+    <fetchRequest name="FetchItemCodeForDataImportWithDistinction1" entity="ItemCode" predicateString="code == $FRQcode AND distinction == $FRQdistinction"/>
+    <fetchRequest name="FetchItemDescriptionForDataImport" entity="ItemDescription" predicateString="itemID == $FRQitemID AND localeCode == $FRQlocaleCode"/>
+    <fetchRequest name="FetchItemDescriptionForDataImport1" entity="ItemDescription" predicateString="itemID == $FRQitemID AND localeCode == $FRQlocaleCode"/>
+    <fetchRequest name="FetchItemForDataImport" entity="Item" predicateString="itemID == $FRQitemID"/>
+    <fetchRequest name="FetchItemForDataImport1" entity="Item" predicateString="itemID == $FRQitemID"/>
+    <elements>
+        <element name="ArchiveOrderHead" positionX="-1269" positionY="1683" width="128" height="178"/>
+        <element name="ArchiveOrderLine" positionX="-1496" positionY="1746" width="128" height="165"/>
+        <element name="BasketAnalysis" positionX="-416" positionY="1485" width="128" height="105"/>
+        <element name="Departure" positionX="-1053" positionY="47" width="128" height="313"/>
+        <element name="FaQ" positionX="-360" positionY="1161" width="128" height="150"/>
+        <element name="Hitlist" positionX="-407" positionY="1629" width="128" height="90"/>
+        <element name="InventoryHead" positionX="-1289" positionY="1386" width="128" height="150"/>
+        <element name="InventoryLine" positionX="-1523" positionY="1383" width="128" height="255"/>
+        <element name="Item" positionX="-621" positionY="1377" width="128" height="540"/>
+        <element name="ItemCode" positionX="-407" positionY="1770" width="128" height="120"/>
+        <element name="ItemDescription" positionX="-821" positionY="1611" width="128" height="120"/>
+        <element name="ItemProductInformation" positionX="-810" positionY="1152" width="128" height="120"/>
+        <element name="Keyword" positionX="-596" positionY="1035" width="128" height="150"/>
+        <element name="LocalizedDescription" positionX="-810" positionY="1386" width="128" height="105"/>
+        <element name="Location" positionX="-1532" positionY="36" width="128" height="373"/>
+        <element name="Location_Alias" positionX="-1512" positionY="453" width="128" height="105"/>
+        <element name="Location_Group" positionX="-1334" positionY="54" width="128" height="105"/>
+        <element name="Newsletter" positionX="-378" positionY="990" width="128" height="135"/>
+        <element name="Payment_Type" positionX="-587" positionY="201" width="128" height="105"/>
+        <element name="Promotion" positionX="-387" positionY="1377" width="128" height="75"/>
+        <element name="Recipient" positionX="-1314" positionY="198" width="128" height="75"/>
+        <element name="Store" positionX="-1503" positionY="869" width="171" height="193"/>
+        <element name="TemplateOrderHead" positionX="-1539" positionY="1080" width="128" height="225"/>
+        <element name="TemplateOrderLine" positionX="-1307" positionY="1062" width="128" height="180"/>
+        <element name="Term" positionX="-540" positionY="549" width="128" height="105"/>
+        <element name="Tour" positionX="-1044" positionY="396" width="128" height="135"/>
+        <element name="Tour_Exception" positionX="-1550" positionY="735" width="128" height="120"/>
+        <element name="Trace_Log" positionX="-830" positionY="468" width="128" height="165"/>
+        <element name="Trace_Type" positionX="-558" positionY="339" width="128" height="120"/>
+        <element name="Transport" positionX="-1332" positionY="342" width="144" height="328"/>
+        <element name="Transport_Box" positionX="-992" positionY="744" width="146" height="75"/>
+        <element name="Transport_Group" positionX="-1287" positionY="732" width="144" height="208"/>
+        <element name="Transport_Packaging" positionX="-837" positionY="719" width="164" height="163"/>
+        <element name="Truck" positionX="-821" positionY="63" width="128" height="135"/>
+        <element name="Truck_Type" positionX="-513" positionY="48" width="128" height="105"/>
+        <element name="User" positionX="-542" positionY="720" width="128" height="283"/>
+    </elements>
+</model>

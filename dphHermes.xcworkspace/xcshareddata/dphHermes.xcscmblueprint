@@ -1,0 +1,51 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E45EA1B25951C20287F9101DF5FC476C67865B29",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3913C385FF209F71C0CFC9B34212B986974081D9" : 0,
+    "205DDC91BBE160B023E68443B8B820ADE258BCA7" : 0,
+    "711041E0ED9623F2CA390E82B983C934C477BEFB" : 0,
+    "E45EA1B25951C20287F9101DF5FC476C67865B29" : 0,
+    "05821199B55DB36603E4AB3D04CB5D733BBB43BF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0F13D246-38B2-4501-BF63-B18F37CBB6D1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3913C385FF209F71C0CFC9B34212B986974081D9" : "ios-Hermes\/Libraries\/JSON\/",
+    "205DDC91BBE160B023E68443B8B820ADE258BCA7" : "ios-Hermes\/Libraries\/Config\/",
+    "711041E0ED9623F2CA390E82B983C934C477BEFB" : "ios-Hermes\/Libraries\/Compression\/",
+    "E45EA1B25951C20287F9101DF5FC476C67865B29" : "ios-Hermes\/",
+    "05821199B55DB36603E4AB3D04CB5D733BBB43BF" : "ios-Hermes\/Libraries\/Scanner\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "dphHermes",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "dphHermes.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/tfs.dataphone.ch\/tfs\/Client\/Hermes\/_git\/ios-lib-scanner",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "05821199B55DB36603E4AB3D04CB5D733BBB43BF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/tfs.dataphone.ch\/tfs\/Client\/Hermes\/_git\/ios-lib-config",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "205DDC91BBE160B023E68443B8B820ADE258BCA7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/tfs.dataphone.ch\/tfs\/Client\/Hermes\/_git\/ios-lib-json",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3913C385FF209F71C0CFC9B34212B986974081D9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/tfs.dataphone.ch\/tfs\/Client\/Hermes\/_git\/ios-lib-zip",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "711041E0ED9623F2CA390E82B983C934C477BEFB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/tfs.dataphone.ch\/tfs\/Client\/Hermes\/_git\/ios-Hermes",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E45EA1B25951C20287F9101DF5FC476C67865B29"
+    }
+  ]
+}
