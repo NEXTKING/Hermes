@@ -38,7 +38,19 @@ typedef NSError * (^program)(NSDictionary *);
                 PFDebugLog(@"PgmStartPushNotificationReceiver");
                 UIApplication *app = [UIApplication sharedApplication];
                 if (PFTourTypeSupported(@"0X1", @"1X1", nil) || PFHermesServerVersion() >= 2) {
-                    if (PFOsVersionCompareGE(@"8.0")) {
+                    if (PFOsVersionCompareGE(@"10.0")) {
+                        
+                        // UNUserNotificationCenter *notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+                        // [notificationCenter requestAuthorizationWithOptions:types completionHandler:^(BOOL granted, NSError *error) { }];
+                        
+                        NSUInteger types = (1 << 0/*Badge*/) | (1 << 1/*Sound*/) | (1 << 2/*Alert*/);
+                        id notificationCenter = objc_msgSend(NSClassFromString(@"UNUserNotificationCenter"), NSSelectorFromString(@"currentNotificationCenter"));
+                        SEL selector = NSSelectorFromString(@"requestAuthorizationWithOptions:completionHandler:");
+                        void (^block)(BOOL, NSError *) = ^(BOOL granted, NSError *error) { if (granted) [app registerForRemoteNotifications]; };
+                        
+                        void (*f)(id, SEL, NSUInteger, void (^)(BOOL, NSError *)) = (void (*)(id, SEL, NSUInteger, void (^)(BOOL, NSError *)))objc_msgSend;
+                        f(notificationCenter, selector, types, block);
+                    } else if (PFOsVersionCompareGE(@"8.0")) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                         id currentSettings = [app performSelector:NSSelectorFromString(@"currentUserNotificationSettings")];
